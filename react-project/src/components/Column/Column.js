@@ -7,7 +7,15 @@ import CardForm from '../CardForm/CardForm'
 
 const Column = ({ id, title, icon }) => {
   
-  const cards = useSelector(state => state.cards.filter(card => card.columnId === id));
+  const searchString = useSelector((state) => state.searchString);
+
+  const cards = useSelector((state) =>
+    state.cards.filter(
+      (card) =>
+        card.columnId === id &&
+        card.title.toLowerCase().includes(searchString.toLowerCase())
+    )
+  );
 
   return (
     <div className={styles.column}>
@@ -21,7 +29,7 @@ const Column = ({ id, title, icon }) => {
           <Card key={card.id} id={card.id} title={card.title} />
         ))}
       </div>
-      <CardForm/>
+      <CardForm columnId={id} />
     </div>
   );
 };
