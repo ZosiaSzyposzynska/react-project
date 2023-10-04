@@ -4,6 +4,7 @@ import styles from './Column.module.scss';
 import Card from './../Card/Card';
 import { getFilteredCards } from '../../redux/store';
 
+
 import CardForm from '../CardForm/CardForm'
 
 const Column = ({ id, title, icon, }) => {
