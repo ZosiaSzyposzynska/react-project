@@ -1,0 +1,54 @@
+/* Favorite.module.scss */
+@use "sass:math";
+@import '../../styles/settings.scss';
+
+.favoriteColumn {
+  width: calc(33% - 12px);
+  padding: ($base-size * 1.5);
+  border-radius: $radius;
+  box-shadow: 0 math.div($base-size, 4) 0 rgba(0,0,0,0.3);
+  color: $color-dark;
+  background-color: white;
+  text-align: center;
+  position: relative;
+  left: 30%;
+  margin-top: 150px;
+}
+
+.favoriteCard {
+  display: flex; /* Użyj flexboxa */
+  align-items: center; /* Wyśrodkuj elementy w pionie */
+ 
+  color: $color-dark;
+   border: 1px solid lighten($color-dark, 60%);
+    padding: $base-size;
+    margin: 12px 0 $base-size 0;
+    border-radius: $radius;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.favoriteCard h3 {
+  flex-grow: 1; 
+  font-size: ($base-size * 1.5);
+  
+  display: flex; 
+  align-items: center; 
+}
+
+.favoriteCard p {
+  padding: math.div($base-size, 2) 0;
+}
+
+.is-favorite {
+  color: gold;
+}
+
+
+@media (max-width: 767px) {
+  .favoriteColumn {
+    width: 100%;
+    margin: 0 0 $base-size 0;
+  }
+}
