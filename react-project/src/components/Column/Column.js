@@ -22,9 +22,14 @@ const Column = ({ id, title, icon, }) => {
           <span className={styles.icon + ' fa fa-' + icon}></span>
         </h3>
       </div>
-      <div className={styles.cards}>
+      <div className={styles.card}>
         {cards.map(card => (
-          <Card key={card.id} id={card.id} title={card.title} />
+          <Card key={card.id} id={card.id} title={card.title} 
+          description={card.description}
+            isFavorite={card.isFavorite}
+            cardId={card.id} 
+          
+          />
         ))}
       </div>
       <CardForm columnId={id} />
