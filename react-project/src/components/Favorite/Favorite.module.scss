@@ -16,8 +16,8 @@
 }
 
 .favoriteCard {
-  display: flex; /* Użyj flexboxa */
-  align-items: center; /* Wyśrodkuj elementy w pionie */
+  display: flex;
+  align-items: center; 
  
   color: $color-dark;
    border: 1px solid lighten($color-dark, 60%);
